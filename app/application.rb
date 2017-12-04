@@ -7,7 +7,7 @@ class Application
     req = Rack::Request.new(env)
 
     resource = "/items/#{@@items.detect{|i| i.name == req.path.split("/").last}.name}" if @@items != []
-    binding.pry
+    #binding.pry
     if req.path == resource
 
       200
