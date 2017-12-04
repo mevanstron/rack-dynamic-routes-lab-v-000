@@ -9,7 +9,7 @@ class Application
     resource = "items/#{@@items.detect{|i| i.name == req.path.split("/").last}}"
 
     if req.path == resource
-      
+
       200
     else
       resp.write "Route not found"
