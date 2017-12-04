@@ -6,10 +6,10 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    resource = "/#{@@items.detect{|i| i.name == req.path.split("/").last}}"
+    resource = "items/#{@@items.detect{|i| i.name == req.path.split("/").last}}"
 
     if req.path == resource
-      binding.pry
+      
       200
     else
       resp.write "Route not found"
