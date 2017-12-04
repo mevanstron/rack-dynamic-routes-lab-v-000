@@ -11,7 +11,7 @@ class Application
     if req.path == resource
       200
     else
-      "Route not found"
+      resp.write "Route not found"
       404
     end
 
