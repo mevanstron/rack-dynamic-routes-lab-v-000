@@ -8,7 +8,7 @@ class Application
 
     item = @@items.detect{|i| i.name == req.path.split("/").last} if @@items != []
     resource = "/items/#{item.name}" if item
-    #binding.pry
+  
     if req.path.match(/items/)
       if req.path == resource
       resp.write "#{item.price}"
