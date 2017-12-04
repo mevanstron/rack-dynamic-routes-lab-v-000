@@ -13,5 +13,7 @@ class Application
     else
       404
     end
+
+    resp.finish
   end
 end
