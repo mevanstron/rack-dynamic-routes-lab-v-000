@@ -6,10 +6,11 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    resource = "/items/#{@@items.detect{|i| i.name == req.path.split("/").last}.name}" if @@items != []
+    item = @@items.detect{|i| i.name == req.path.split("/").last}
+    resource = "/items/#{item.name}" if @@items != []
     #binding.pry
     if req.path == resource
-
+      resp.write "#{item.price}"
       200
     else
       resp.write "Route not found"
