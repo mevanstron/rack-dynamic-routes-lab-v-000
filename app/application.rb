@@ -1,11 +1,12 @@
 class Application
+
+  @@items = []
+
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    binding.pry
-    item = Item.new
     path = "items/#{item.name}"
-
+    binding.pry
     if req.path.match(path)
       200
     else
