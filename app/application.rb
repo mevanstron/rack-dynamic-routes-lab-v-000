@@ -5,7 +5,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    binding.pry
+    #binding.pry
     resource = "/#{@@items.detect{|i| i.name == req.path.split("/").last}}"
 
     if req.path == resource
