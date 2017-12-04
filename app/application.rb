@@ -8,7 +8,7 @@ class Application
     binding.pry
     resource = "/#{@@items.detect{|i| i.name == req.path.split("/").last}}"
 
-    if req.path.match(resource)
+    if req.path == resource
       200
     else
       404
