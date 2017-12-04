@@ -6,8 +6,10 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     #path = "items/#{item.name}"
-    binding.pry
-    if req.path.match(/path/)
+    
+    path = "/#{@@items.detect{|i| i.name == req.path.split("/").last}}"
+    
+    if req.path.match(path)
       200
     else
       404
